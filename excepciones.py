@@ -12,7 +12,9 @@ Descripción:
         ErrorSistema
         ├── ErrorValidacion
         │   ├── IdentificadorInvalidoError
-        │   └── EstadoInvalidoError
+        │   ├── EstadoInvalidoError
+        │   ├── ParametroFaltante          (dato obligatorio no entregado)
+        │   └── DatosClienteInvalidos      (dato de un cliente con formato incorrecto)
         └── OperacionNoPermitidaError
 
     Cómo extenderla (para las clases Cliente, Servicio y Reserva):
@@ -122,3 +124,43 @@ class OperacionNoPermitidaError(ErrorSistema):
         """
         # Se reutiliza el constructor base con un código propio de operaciones.
         super().__init__(mensaje, codigo="OPE-001")
+
+
+class ParametroFaltante(ErrorValidacion):
+    """
+    No se entregó un dato obligatorio (su valor es None).
+
+    Es general: la usa Cliente y también pueden usarla Servicio o Reserva.
+    """
+
+    def __init__(self, campo, entidad="Sistema"):
+        """
+        Crea el error indicando qué dato falta y en qué entidad.
+
+        Args:
+            campo (str): Nombre del dato obligatorio que no se entregó.
+            entidad (str): Clase u operación que lo necesitaba (ej. "Cliente").
+        """
+        # Se arma un mensaje claro y se fija el campo afectado y su código.
+        super().__init__(f"Falta el dato obligatorio '{campo}' en {entidad}.", campo=campo, codigo="VAL-003")
+        # Se conserva la entidad para consultarla después si se necesita.
+        self.entidad = entidad
+
+
+class DatosClienteInvalidos(ErrorValidacion):
+    """Un dato del cliente se entregó, pero no cumple las reglas de validación."""
+
+    def __init__(self, campo, valor, motivo):
+        """
+        Crea el error con el campo, el valor rechazado y el motivo.
+
+        Args:
+            campo (str): Dato del cliente que falló (nombre, correo, telefono...).
+            valor: Valor que se intentó asignar.
+            motivo (str): Explicación de la regla que no se cumplió.
+        """
+        # Se construye un mensaje que dice qué campo falló, con qué valor y por qué.
+        super().__init__(f"Dato de cliente inválido en '{campo}' ({valor!r}): {motivo}.",
+                         campo=campo, codigo="CLI-001")
+        # Se conserva el valor rechazado para depuración.
+        self.valor = valor

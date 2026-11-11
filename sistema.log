@@ -38,3 +38,23 @@
 2026-11-10 22:09:41 | INFO    | main                 | Operación 14 'Registrar con un nivel desconocido' completada: 2026-11-10 22:09:41 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
 2026-11-10 22:09:41 | INFO    | main                 | ===== FIN: 14 operaciones, 7 exitosas, 7 con error controlado =====
 2026-11-10 22:09:41 | INFO    | main                 | Fin de la ejecución
+2026-11-10 22:50:58 | INFO    | main                 | ===== INICIO DE LA DEMOSTRACIÓN =====
+2026-11-10 22:50:58 | INFO    | main                 | Operación 1 'Crear entidad válida con ID automático' completada: Entidad de prueba 'Sala de juntas' [PRB-0001] - ACTIVO
+2026-11-10 22:50:58 | INFO    | main                 | Operación 2 'Crear entidad válida con ID manual' completada: Entidad de prueba 'Proyector Epson' [PRB-100] - INACTIVO
+2026-11-10 22:50:58 | ERROR   | main                 | Operación 3 'Instanciar directamente la clase abstracta' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadBase es abstracta y no puede instanciarse. [causa: TypeError: Can't instantiate abstract class EntidadBase without an implementation for abstract methods 'describir', 'validar']
+2026-11-10 22:50:58 | ERROR   | main                 | Operación 4 'Crear entidad con ID inválido' rechazada -> IdentificadorInvalidoError: [VAL-001] Identificador inválido ('id con espacios!'): solo se permiten letras, números, '-' y '_' (máximo 30 caracteres).
+2026-11-10 22:50:58 | ERROR   | main                 | Operación 5 'Crear entidad con estado inválido' rechazada -> EstadoInvalidoError: [VAL-002] Estado 'SUSPENDIDO' no permitido. Valores válidos: ACTIVO, INACTIVO, ELIMINADO.
+2026-11-10 22:50:58 | ERROR   | main                 | Operación 6 'Crear entidad con nombre inválido' rechazada -> ErrorValidacion: [VAL-000] El nombre 'ab' debe tener al menos 3 caracteres.
+2026-11-10 22:50:58 | INFO    | EntidadPrueba        | EntidadPrueba PRB-0001: estado ACTIVO -> INACTIVO (motivo: mantenimiento)
+2026-11-10 22:50:58 | INFO    | main                 | Operación 7 'Cambiar estado ACTIVO -> INACTIVO' completada: PRB-0001: ACTIVO -> INACTIVO
+2026-11-10 22:50:58 | ERROR   | main                 | Operación 8 'Cambiar al mismo estado' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadPrueba PRB-0001 ya se encuentra en estado INACTIVO.
+2026-11-10 22:50:58 | INFO    | EntidadPrueba        | EntidadPrueba PRB-100: estado INACTIVO -> ELIMINADO (motivo: retirado del inventario)
+2026-11-10 22:50:58 | INFO    | main                 | Operación 9 'Cambiar estado a ELIMINADO' completada: PRB-100: INACTIVO -> ELIMINADO
+2026-11-10 22:50:58 | ERROR   | main                 | Operación 10 'Reactivar entidad eliminada' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadPrueba PRB-100 está ELIMINADO y no puede pasar a ACTIVO.
+2026-11-10 22:50:58 | ERROR   | main                 | Error inesperado en la operación 11 -> IndexError: list index out of range
+2026-11-10 22:50:58 | INFO    | main                 | Operación 12 'Comparar entidades por ID' completada: copia == original: True; entidades únicas en el conjunto: 2
+2026-11-10 22:50:58 | INFO    | main                 | Operación 13 'Convertir entidad a diccionario' completada: {'id': 'PRB-0001', 'tipo': 'EntidadPrueba', 'estado': 'INACTIVO', 'fecha_creacion': '2026-11-10 22:50:58', 'fecha_modificacion': '2026-11-10 22:50:58', 'nombre': 'Sala de juntas'}
+2026-11-10 22:50:58 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
+2026-11-10 22:50:58 | INFO    | main                 | Operación 14 'Registrar con un nivel desconocido' completada: 2026-11-10 22:50:58 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
+2026-11-10 22:50:58 | INFO    | main                 | ===== FIN: 14 operaciones, 7 exitosas, 7 con error controlado =====
+2026-11-10 22:50:58 | INFO    | main                 | Fin de la ejecución
