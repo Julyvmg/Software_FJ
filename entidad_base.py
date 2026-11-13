@@ -2,6 +2,7 @@
 Módulo: entidad_base.py
 Proyecto: Software FJ - Sistema Integral de Gestión de Clientes, Servicios y Reservas
 Curso: Programación (213023) - UNAD - Fase 4
+Autora: July Matabanchoy
 
 Descripción:
     Define la clase abstracta ``EntidadBase``, raíz de todas las entidades del
