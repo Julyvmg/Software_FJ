@@ -14,8 +14,11 @@ Descripción:
         │   ├── IdentificadorInvalidoError
         │   ├── EstadoInvalidoError
         │   ├── ParametroFaltante          (dato obligatorio no entregado)
-        │   └── DatosClienteInvalidos      (dato de un cliente con formato incorrecto)
-        └── OperacionNoPermitidaError
+        │   ├── DatosClienteInvalidos      (dato de un cliente con formato incorrecto)
+        │   └── DatosServicioInvalidos     (dato de un servicio con valor incorrecto)
+        ├── OperacionNoPermitidaError
+        ├── ServicioNoDisponibleError      (se intentó usar un servicio NO_DISPONIBLE)
+        └── CalculoInconsistenteError      (el cálculo de un costo dio un resultado imposible)
 
     Cómo extenderla (para las clases Cliente, Servicio y Reserva):
         class ServicioNoDisponibleError(ErrorSistema):
@@ -164,3 +167,56 @@ class DatosClienteInvalidos(ErrorValidacion):
                          campo=campo, codigo="CLI-001")
         # Se conserva el valor rechazado para depuración.
         self.valor = valor
+
+
+# ----------------------------------------------------------------------
+# Excepciones del módulo de Servicios (Estudiante 3)
+# ----------------------------------------------------------------------
+class ServicioNoDisponibleError(ErrorSistema):
+    """Se intentó usar (cotizar o reservar) un servicio que no está disponible."""
+
+    def __init__(self, codigo_servicio, nombre):
+        """
+        Crea el error indicando qué servicio no está disponible.
+
+        Args:
+            codigo_servicio (str): Código (ID) del servicio.
+            nombre (str): Nombre del servicio.
+        """
+        # Se usa el código SER-001, tal como se propuso en el ejemplo de este módulo.
+        super().__init__(f"El servicio '{nombre}' ({codigo_servicio}) no está disponible.", codigo="SER-001")
+        # Se conserva el código del servicio para consultarlo después.
+        self.codigo_servicio = codigo_servicio
+
+
+class DatosServicioInvalidos(ErrorValidacion):
+    """Un dato del servicio se entregó, pero no cumple las reglas de validación."""
+
+    def __init__(self, campo, valor, motivo):
+        """
+        Crea el error con el campo, el valor rechazado y el motivo.
+
+        Args:
+            campo (str): Dato del servicio que falló (horas, capacidad, tarifa...).
+            valor: Valor que se intentó asignar.
+            motivo (str): Explicación de la regla que no se cumplió.
+        """
+        # Mismo formato que DatosClienteInvalidos para que los mensajes sean uniformes.
+        super().__init__(f"Dato de servicio inválido en '{campo}' ({valor!r}): {motivo}.",
+                         campo=campo, codigo="SER-002")
+        # Se conserva el valor rechazado para depuración.
+        self.valor = valor
+
+
+class CalculoInconsistenteError(ErrorSistema):
+    """El cálculo de un costo produjo un resultado imposible (negativo, infinito, etc.)."""
+
+    def __init__(self, mensaje):
+        """
+        Crea el error de cálculo inconsistente.
+
+        Args:
+            mensaje (str): Descripción del cálculo que falló.
+        """
+        # Se reutiliza el constructor base con un código propio de cálculos.
+        super().__init__(mensaje, codigo="SER-003")
