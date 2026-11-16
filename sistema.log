@@ -38,8 +38,6 @@
 2026-11-10 22:09:41 | INFO    | main                 | Operación 14 'Registrar con un nivel desconocido' completada: 2026-11-10 22:09:41 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
 2026-11-10 22:09:41 | INFO    | main                 | ===== FIN: 14 operaciones, 7 exitosas, 7 con error controlado =====
 2026-11-10 22:09:41 | INFO    | main                 | Fin de la ejecución
-<<<<<<< Updated upstream
-=======
 2026-11-10 22:50:58 | INFO    | main                 | ===== INICIO DE LA DEMOSTRACIÓN =====
 2026-11-10 22:50:58 | INFO    | main                 | Operación 1 'Crear entidad válida con ID automático' completada: Entidad de prueba 'Sala de juntas' [PRB-0001] - ACTIVO
 2026-11-10 22:50:58 | INFO    | main                 | Operación 2 'Crear entidad válida con ID manual' completada: Entidad de prueba 'Proyector Epson' [PRB-100] - INACTIVO
@@ -91,4 +89,3 @@
 2026-11-10 23:07:45 | INFO    | main                 | Operación 14 'Registrar con un nivel desconocido' completada: 2026-11-10 23:07:45 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
 2026-11-10 23:07:45 | INFO    | main                 | ===== FIN: 14 operaciones, 7 exitosas, 7 con error controlado =====
 2026-11-10 23:07:45 | INFO    | main                 | Fin de la ejecución
->>>>>>> Stashed changes

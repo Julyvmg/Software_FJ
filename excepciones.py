@@ -13,10 +13,6 @@ Descripción:
         ErrorSistema
         ├── ErrorValidacion
         │   ├── IdentificadorInvalidoError
-<<<<<<< Updated upstream
-        │   └── EstadoInvalidoError
-        └── OperacionNoPermitidaError
-=======
         │   ├── EstadoInvalidoError
         │   ├── ParametroFaltante          (dato obligatorio no entregado)
         │   ├── DatosClienteInvalidos      (dato de un cliente con formato incorrecto)
@@ -24,7 +20,6 @@ Descripción:
         ├── OperacionNoPermitidaError
         ├── ServicioNoDisponibleError      (se intentó usar un servicio NO_DISPONIBLE)
         └── CalculoInconsistenteError      (el cálculo de un costo dio un resultado imposible)
->>>>>>> Stashed changes
 
     Cómo extenderla (para las clases Cliente, Servicio y Reserva):
         class ServicioNoDisponibleError(ErrorSistema):
@@ -133,8 +128,6 @@ class OperacionNoPermitidaError(ErrorSistema):
         """
         # Se reutiliza el constructor base con un código propio de operaciones.
         super().__init__(mensaje, codigo="OPE-001")
-<<<<<<< Updated upstream
-=======
 
 
 class ParametroFaltante(ErrorValidacion):
@@ -228,4 +221,3 @@ class CalculoInconsistenteError(ErrorSistema):
         """
         # Se reutiliza el constructor base con un código propio de cálculos.
         super().__init__(mensaje, codigo="SER-003")
->>>>>>> Stashed changes
