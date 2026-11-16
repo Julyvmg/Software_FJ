@@ -188,10 +188,11 @@ class Reserva(EntidadBase):
             servicio.verificar_disponibilidad()
         except ServicioNoDisponibleError as error:
             # Se traduce al error de la reserva conservando la causa original.
-            raise ReservaInvalidaError("servicio", error.mensaje) from error
+            # rstrip(".") evita el doble punto final en el mensaje.
+            raise ReservaInvalidaError("servicio", error.mensaje.rstrip(".")) from error
         except ErrorValidacion as error:
             # Datos del servicio inválidos (ParametroFaltante, DatosServicioInvalidos).
-            raise ReservaInvalidaError("servicio", f"datos inválidos: {error.mensaje}") from error
+            raise ReservaInvalidaError("servicio", f"datos inválidos: {error.mensaje.rstrip('.')}") from error
         # Se devuelve el servicio validado.
         return servicio
 

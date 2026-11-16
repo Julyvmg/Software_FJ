@@ -89,3 +89,116 @@
 2026-11-10 23:07:45 | INFO    | main                 | Operación 14 'Registrar con un nivel desconocido' completada: 2026-11-10 23:07:45 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
 2026-11-10 23:07:45 | INFO    | main                 | ===== FIN: 14 operaciones, 7 exitosas, 7 con error controlado =====
 2026-11-10 23:07:45 | INFO    | main                 | Fin de la ejecución
+2026-11-10 23:42:43 | INFO    | main                 | ===== INICIO DE LA DEMOSTRACIÓN =====
+2026-11-10 23:42:43 | INFO    | main                 | Operación 1 'Crear entidad válida con ID automático' completada: Entidad de prueba 'Sala de juntas' [PRB-0001] - ACTIVO
+2026-11-10 23:42:43 | INFO    | main                 | Operación 2 'Crear entidad válida con ID manual' completada: Entidad de prueba 'Proyector Epson' [PRB-100] - INACTIVO
+2026-11-10 23:42:44 | ERROR   | main                 | Operación 3 'Instanciar directamente la clase abstracta' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadBase es abstracta y no puede instanciarse. [causa: TypeError: Can't instantiate abstract class EntidadBase without an implementation for abstract methods 'describir', 'validar']
+2026-11-10 23:42:44 | ERROR   | main                 | Operación 4 'Crear entidad con ID inválido' rechazada -> IdentificadorInvalidoError: [VAL-001] Identificador inválido ('id con espacios!'): solo se permiten letras, números, '-' y '_' (máximo 30 caracteres).
+2026-11-10 23:42:44 | ERROR   | main                 | Operación 5 'Crear entidad con estado inválido' rechazada -> EstadoInvalidoError: [VAL-002] Estado 'SUSPENDIDO' no permitido. Valores válidos: ACTIVO, INACTIVO, ELIMINADO.
+2026-11-10 23:42:44 | ERROR   | main                 | Operación 6 'Crear entidad con nombre inválido' rechazada -> ErrorValidacion: [VAL-000] El nombre 'ab' debe tener al menos 3 caracteres.
+2026-11-10 23:42:44 | INFO    | EntidadPrueba        | EntidadPrueba PRB-0001: estado ACTIVO -> INACTIVO (motivo: mantenimiento)
+2026-11-10 23:42:44 | INFO    | main                 | Operación 7 'Cambiar estado ACTIVO -> INACTIVO' completada: PRB-0001: ACTIVO -> INACTIVO
+2026-11-10 23:42:44 | ERROR   | main                 | Operación 8 'Cambiar al mismo estado' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadPrueba PRB-0001 ya se encuentra en estado INACTIVO.
+2026-11-10 23:42:44 | INFO    | EntidadPrueba        | EntidadPrueba PRB-100: estado INACTIVO -> ELIMINADO (motivo: retirado del inventario)
+2026-11-10 23:42:44 | INFO    | main                 | Operación 9 'Cambiar estado a ELIMINADO' completada: PRB-100: INACTIVO -> ELIMINADO
+2026-11-10 23:42:44 | ERROR   | main                 | Operación 10 'Reactivar entidad eliminada' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadPrueba PRB-100 está ELIMINADO y no puede pasar a ACTIVO.
+2026-11-10 23:42:44 | ERROR   | main                 | Error inesperado en la operación 11 -> IndexError: list index out of range
+2026-11-10 23:42:44 | INFO    | main                 | Operación 12 'Comparar entidades por ID' completada: copia == original: True; entidades únicas en el conjunto: 2
+2026-11-10 23:42:44 | INFO    | main                 | Operación 13 'Convertir entidad a diccionario' completada: {'id': 'PRB-0001', 'tipo': 'EntidadPrueba', 'estado': 'INACTIVO', 'fecha_creacion': '2026-11-10 23:42:43', 'fecha_modificacion': '2026-11-10 23:42:44', 'nombre': 'Sala de juntas'}
+2026-11-10 23:42:44 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
+2026-11-10 23:42:44 | INFO    | main                 | Operación 14 'Registrar con un nivel desconocido' completada: 2026-11-10 23:42:44 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
+2026-11-10 23:42:44 | INFO    | main                 | ===== FIN: 14 operaciones, 7 exitosas, 7 con error controlado =====
+2026-11-10 23:42:44 | INFO    | main                 | Fin de la ejecución
+2026-11-10 23:55:40 | INFO    | main                 | ===== INICIO DE LA DEMOSTRACIÓN =====
+2026-11-10 23:55:40 | INFO    | main                 | Operación 1 'Crear entidad válida con ID automático' completada: Entidad de prueba 'Sala de juntas' [PRB-0001] - ACTIVO
+2026-11-10 23:55:40 | INFO    | main                 | Operación 2 'Crear entidad válida con ID manual' completada: Entidad de prueba 'Proyector Epson' [PRB-100] - INACTIVO
+2026-11-10 23:55:40 | ERROR   | main                 | Operación 3 'Instanciar directamente la clase abstracta' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadBase es abstracta y no puede instanciarse. [causa: TypeError: Can't instantiate abstract class EntidadBase without an implementation for abstract methods 'describir', 'validar']
+2026-11-10 23:55:40 | ERROR   | main                 | Operación 4 'Crear entidad con ID inválido' rechazada -> IdentificadorInvalidoError: [VAL-001] Identificador inválido ('id con espacios!'): solo se permiten letras, números, '-' y '_' (máximo 30 caracteres).
+2026-11-10 23:55:40 | ERROR   | main                 | Operación 5 'Crear entidad con estado inválido' rechazada -> EstadoInvalidoError: [VAL-002] Estado 'SUSPENDIDO' no permitido. Valores válidos: ACTIVO, INACTIVO, ELIMINADO.
+2026-11-10 23:55:40 | ERROR   | main                 | Operación 6 'Crear entidad con nombre inválido' rechazada -> ErrorValidacion: [VAL-000] El nombre 'ab' debe tener al menos 3 caracteres.
+2026-11-10 23:55:40 | INFO    | EntidadPrueba        | EntidadPrueba PRB-0001: estado ACTIVO -> INACTIVO (motivo: mantenimiento)
+2026-11-10 23:55:40 | INFO    | main                 | Operación 7 'Cambiar estado ACTIVO -> INACTIVO' completada: PRB-0001: ACTIVO -> INACTIVO
+2026-11-10 23:55:40 | ERROR   | main                 | Operación 8 'Cambiar al mismo estado' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadPrueba PRB-0001 ya se encuentra en estado INACTIVO.
+2026-11-10 23:55:40 | INFO    | EntidadPrueba        | EntidadPrueba PRB-100: estado INACTIVO -> ELIMINADO (motivo: retirado del inventario)
+2026-11-10 23:55:40 | INFO    | main                 | Operación 9 'Cambiar estado a ELIMINADO' completada: PRB-100: INACTIVO -> ELIMINADO
+2026-11-10 23:55:40 | ERROR   | main                 | Operación 10 'Reactivar entidad eliminada' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadPrueba PRB-100 está ELIMINADO y no puede pasar a ACTIVO.
+2026-11-10 23:55:40 | ERROR   | main                 | Error inesperado en la operación 11 -> IndexError: list index out of range
+2026-11-10 23:55:40 | INFO    | main                 | Operación 12 'Comparar entidades por ID' completada: copia == original: True; entidades únicas en el conjunto: 2
+2026-11-10 23:55:40 | INFO    | main                 | Operación 13 'Convertir entidad a diccionario' completada: {'id': 'PRB-0001', 'tipo': 'EntidadPrueba', 'estado': 'INACTIVO', 'fecha_creacion': '2026-11-10 23:55:40', 'fecha_modificacion': '2026-11-10 23:55:40', 'nombre': 'Sala de juntas'}
+2026-11-10 23:55:40 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
+2026-11-10 23:55:40 | INFO    | main                 | Operación 14 'Registrar con un nivel desconocido' completada: 2026-11-10 23:55:40 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
+2026-11-10 23:55:40 | INFO    | main                 | ===== FIN: 14 operaciones, 7 exitosas, 7 con error controlado =====
+2026-11-10 23:55:40 | INFO    | main                 | Fin de la ejecución
+2026-11-10 23:56:55 | INFO    | Interfaz             | Interfaz gráfica iniciada
+2026-11-11 16:41:03 | INFO    | Interfaz             | Interfaz gráfica iniciada
+2026-11-11 16:41:17 | INFO    | main                 | ===== INICIO DE LA DEMOSTRACIÓN =====
+2026-11-11 16:41:17 | INFO    | main                 | Operación 1 'Crear entidad válida con ID automático' completada: Entidad de prueba 'Sala de juntas' [PRB-0001] - ACTIVO
+2026-11-11 16:41:17 | INFO    | main                 | Operación 2 'Crear entidad válida con ID manual' completada: Entidad de prueba 'Proyector Epson' [PRB-100] - INACTIVO
+2026-11-11 16:41:17 | ERROR   | main                 | Operación 3 'Instanciar directamente la clase abstracta' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadBase es abstracta y no puede instanciarse. [causa: TypeError: Can't instantiate abstract class EntidadBase without an implementation for abstract methods 'describir', 'validar']
+2026-11-11 16:41:17 | ERROR   | main                 | Operación 4 'Crear entidad con ID inválido' rechazada -> IdentificadorInvalidoError: [VAL-001] Identificador inválido ('id con espacios!'): solo se permiten letras, números, '-' y '_' (máximo 30 caracteres).
+2026-11-11 16:41:17 | ERROR   | main                 | Operación 5 'Crear entidad con estado inválido' rechazada -> EstadoInvalidoError: [VAL-002] Estado 'SUSPENDIDO' no permitido. Valores válidos: ACTIVO, INACTIVO, ELIMINADO.
+2026-11-11 16:41:17 | ERROR   | main                 | Operación 6 'Crear entidad con nombre inválido' rechazada -> ErrorValidacion: [VAL-000] El nombre 'ab' debe tener al menos 3 caracteres.
+2026-11-11 16:41:17 | INFO    | EntidadPrueba        | EntidadPrueba PRB-0001: estado ACTIVO -> INACTIVO (motivo: mantenimiento)
+2026-11-11 16:41:17 | INFO    | main                 | Operación 7 'Cambiar estado ACTIVO -> INACTIVO' completada: PRB-0001: ACTIVO -> INACTIVO
+2026-11-11 16:41:17 | ERROR   | main                 | Operación 8 'Cambiar al mismo estado' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadPrueba PRB-0001 ya se encuentra en estado INACTIVO.
+2026-11-11 16:41:17 | INFO    | EntidadPrueba        | EntidadPrueba PRB-100: estado INACTIVO -> ELIMINADO (motivo: retirado del inventario)
+2026-11-11 16:41:17 | INFO    | main                 | Operación 9 'Cambiar estado a ELIMINADO' completada: PRB-100: INACTIVO -> ELIMINADO
+2026-11-11 16:41:17 | ERROR   | main                 | Operación 10 'Reactivar entidad eliminada' rechazada -> OperacionNoPermitidaError: [OPE-001] EntidadPrueba PRB-100 está ELIMINADO y no puede pasar a ACTIVO.
+2026-11-11 16:41:17 | ERROR   | main                 | Error inesperado en la operación 11 -> IndexError: list index out of range
+2026-11-11 16:41:17 | INFO    | main                 | Operación 12 'Comparar entidades por ID' completada: copia == original: True; entidades únicas en el conjunto: 2
+2026-11-11 16:41:17 | INFO    | main                 | Operación 13 'Convertir entidad a diccionario' completada: {'id': 'PRB-0001', 'tipo': 'EntidadPrueba', 'estado': 'INACTIVO', 'fecha_creacion': '2026-11-11 16:41:17', 'fecha_modificacion': '2026-11-11 16:41:17', 'nombre': 'Sala de juntas'}
+2026-11-11 16:41:17 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
+2026-11-11 16:41:17 | INFO    | main                 | Operación 14 'Registrar con un nivel desconocido' completada: 2026-11-11 16:41:17 | WARNING | main                 | (nivel desconocido 'DEBUGX') Prueba de nivel no soportado
+2026-11-11 16:41:17 | INFO    | main                 | ===== FIN: 14 operaciones, 7 exitosas, 7 con error controlado =====
+2026-11-11 16:41:17 | INFO    | main                 | Fin de la ejecución
+2026-11-11 16:41:17 | INFO    | Simulacion           | ===== INICIO DE LA SIMULACIÓN DE OPERACIONES =====
+2026-11-11 16:41:17 | INFO    | Cliente              | Cliente registrado: Cliente Ana Pérez [1032456789] - ana@correo.com - ACTIVO
+2026-11-11 16:41:17 | INFO    | Simulacion           | Simulación 1: 'Registrar cliente válido (Ana Pérez)' completada
+2026-11-11 16:41:17 | INFO    | Cliente              | Cliente registrado: Cliente Laura Gómez [52789456] - laura.gomez@empresa.co - ACTIVO
+2026-11-11 16:41:17 | INFO    | Simulacion           | Simulación 2: 'Registrar cliente válido (Laura Gómez)' completada
+2026-11-11 16:41:17 | INFO    | Cliente              | Cliente registrado: Cliente Pedro Ruiz [79123456] - pedro@correo.com - ACTIVO
+2026-11-11 16:41:17 | INFO    | Simulacion           | Simulación 3: 'Registrar cliente válido (Pedro Ruiz)' completada
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 4: 'Registrar cliente con correo inválido' rechazada -> DatosClienteInvalidos: [CLI-001] Dato de cliente inválido en 'correo' ('carlos.correo.com'): formato inválido, ejemplo: usuario@dominio.com.
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 5: 'Registrar cliente sin teléfono (parámetro faltante)' rechazada -> ParametroFaltante: [VAL-003] Falta el dato obligatorio 'telefono' en Cliente.
+2026-11-11 16:41:17 | INFO    | ReservaSala          | Servicio creado: [SAL-100] Reserva de sala 'Sala Andes' - Sala de juntas: 3 h para 12 personas, $50,000/h - costo $170,000.00 (DISPONIBLE)
+2026-11-11 16:41:17 | INFO    | Simulacion           | Simulación 6: 'Crear servicio ReservaSala válido' completada
+2026-11-11 16:41:17 | INFO    | AlquilerEquipo       | Servicio creado: [EQU-100] Alquiler de 5 x 'Portátil' - Portátiles para capacitación: 2 día(s), $30,000/día por equipo - costo $310,000.00 (DISPONIBLE)
+2026-11-11 16:41:17 | INFO    | Simulacion           | Simulación 7: 'Crear servicio AlquilerEquipo válido' completada
+2026-11-11 16:41:17 | INFO    | AsesoriaEspecializada | Servicio creado: [ASE-100] Asesoría en REDES - Asesoría en redes: 4 h con Carlos Gómez, $80,000/h - costo $370,000.00 (DISPONIBLE)
+2026-11-11 16:41:17 | INFO    | Simulacion           | Simulación 8: 'Crear servicio AsesoriaEspecializada válido' completada
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 9: 'Crear sala con horas negativas' rechazada -> DatosServicioInvalidos: [SER-002] Dato de servicio inválido en 'horas' (-2): debe ser mayor que cero.
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 10: 'Crear asesoría de un tipo que no se ofrece' rechazada -> DatosServicioInvalidos: [SER-002] Dato de servicio inválido en 'tipo_asesoria' ('Contabilidad'): valores válidos: SOFTWARE, REDES, SEGURIDAD, BASES DE DATOS, NUBE.
+2026-11-11 16:41:17 | INFO    | Reserva              | Reserva registrada: Reserva RES-0001 - Ana Pérez [1032456789] - Sala de juntas (SAL-100) - 3 horas - 2026-11-14 - $170,000.00 - PENDIENTE
+2026-11-11 16:41:17 | INFO    | Reserva              | Reserva RES-0001: estado PENDIENTE -> CONFIRMADA (motivo: confirmación de la reserva)
+2026-11-11 16:41:17 | INFO    | Reserva              | Reserva RES-0001 confirmada. Costo final $182,070.00
+2026-11-11 16:41:17 | INFO    | Simulacion           | Simulación 11: 'Reserva completa: registrar, cotizar y confirmar con descuento' completada
+2026-11-11 16:41:17 | INFO    | Reserva              | Reserva registrada: Reserva RES-0002 - Laura Gómez [52789456] - Portátiles para capacitación (EQU-100) - 2 días - 2026-11-14 - $310,000.00 - PENDIENTE
+2026-11-11 16:41:17 | INFO    | Reserva              | Reserva RES-0002: estado PENDIENTE -> CONFIRMADA (motivo: confirmación de la reserva)
+2026-11-11 16:41:17 | INFO    | Reserva              | Reserva RES-0002 confirmada. Costo final $368,900.00
+2026-11-11 16:41:17 | INFO    | Reserva              | Reserva RES-0002: estado CONFIRMADA -> CANCELADA (motivo: el cliente cambió la fecha del evento)
+2026-11-11 16:41:17 | INFO    | Reserva              | Seguimiento: cancelación de la reserva RES-0002 (estado previo CONFIRMADA) -> EXITOSA
+2026-11-11 16:41:17 | INFO    | Simulacion           | Simulación 12: 'Reserva de equipos: confirmar y cancelar' completada
+2026-11-11 16:41:17 | ERROR   | GestorReservas       | No se pudo registrar la reserva -> ReservaInvalidaError: [RES-001] Reserva inválida en 'duracion': 8 horas no coincide con la del servicio (3 horas).
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 13: 'Reservar con una duración que no coincide con el servicio' rechazada -> ReservaInvalidaError: [RES-001] Reserva inválida en 'duracion': 8 horas no coincide con la del servicio (3 horas).
+2026-11-11 16:41:17 | ERROR   | GestorReservas       | No se pudo registrar la reserva -> ReservaInvalidaError: [RES-001] Reserva inválida en 'fecha_realizacion': 2020-05-01 es una fecha pasada.
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 14: 'Reservar con una fecha pasada' rechazada -> ReservaInvalidaError: [RES-001] Reserva inválida en 'fecha_realizacion': 2020-05-01 es una fecha pasada.
+2026-11-11 16:41:17 | INFO    | Cliente              | Cliente 79123456: estado ACTIVO -> INACTIVO (motivo: cartera vencida)
+2026-11-11 16:41:17 | ERROR   | GestorReservas       | No se pudo registrar la reserva -> ReservaInvalidaError: [RES-001] Reserva inválida en 'cliente': el cliente 79123456 está INACTIVO.
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 15: 'Reservar con un cliente inactivo' rechazada -> ReservaInvalidaError: [RES-001] Reserva inválida en 'cliente': el cliente 79123456 está INACTIVO.
+2026-11-11 16:41:17 | INFO    | AsesoriaEspecializada | AsesoriaEspecializada ASE-100: estado DISPONIBLE -> NO_DISPONIBLE (motivo: especialista en vacaciones)
+2026-11-11 16:41:17 | ERROR   | GestorReservas       | No se pudo registrar la reserva -> ReservaInvalidaError: [RES-001] Reserva inválida en 'servicio': El servicio 'Asesoría en redes' (ASE-100) no está disponible. [causa: ServicioNoDisponibleError: [SER-001] El servicio 'Asesoría en redes' (ASE-100) no está disponible.]
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 16: 'Reservar un servicio no disponible' rechazada -> ReservaInvalidaError: [RES-001] Reserva inválida en 'servicio': El servicio 'Asesoría en redes' (ASE-100) no está disponible. [causa: ServicioNoDisponibleError: [SER-001] El servicio 'Asesoría en redes' (ASE-100) no está disponible.]
+2026-11-11 16:41:17 | ERROR   | Reserva              | Falló la confirmación de la reserva RES-0002 -> EstadoReservaError: [RES-003] No se puede confirmar la reserva RES-0002: su estado actual es CANCELADA.
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 17: 'Confirmar una reserva cancelada' rechazada -> ErrorConfirmacionReserva: [RES-004] No fue posible confirmar la reserva RES-0002: No se puede confirmar la reserva RES-0002: su estado actual es CANCELADA. [causa: EstadoReservaError: [RES-003] No se puede confirmar la reserva RES-0002: su estado actual es CANCELADA.]
+2026-11-11 16:41:17 | INFO    | Reserva              | Seguimiento: cancelación de la reserva RES-0002 (estado previo CANCELADA) -> RECHAZADA
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 18: 'Cancelar una reserva ya cancelada' rechazada -> ErrorCancelacionReserva: [RES-005] No fue posible cancelar la reserva RES-0002: No se puede cancelar la reserva RES-0002: su estado actual es CANCELADA. [causa: EstadoReservaError: [RES-003] No se puede cancelar la reserva RES-0002: su estado actual es CANCELADA.]
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 19: 'Buscar una reserva inexistente' rechazada -> ReservaNoEncontradaError: [RES-002] No existe una reserva con el ID 'RES-9999'.
+2026-11-11 16:41:17 | INFO    | procesar_servicios   | Revisión de servicio terminada (1 ok, 0 con error)
+2026-11-11 16:41:17 | INFO    | procesar_servicios   | Revisión de servicio terminada (2 ok, 0 con error)
+2026-11-11 16:41:17 | ERROR   | procesar_servicios   | Servicio ASE-100 rechazado -> ServicioNoDisponibleError: [SER-001] El servicio 'Asesoría en redes' (ASE-100) no está disponible.
+2026-11-11 16:41:17 | INFO    | procesar_servicios   | Revisión de servicio terminada (2 ok, 1 con error)
+2026-11-11 16:41:17 | INFO    | Simulacion           | Simulación 20: 'Procesar todos los servicios (polimorfismo)' completada
+2026-11-11 16:41:17 | ERROR   | Simulacion           | Simulación 21: error inesperado -> IndexError: list index out of range
+2026-11-11 16:41:17 | INFO    | Simulacion           | ===== FIN DE LA SIMULACIÓN: 21 operaciones =====
+2026-11-11 16:42:46 | INFO    | Interfaz             | Interfaz gráfica iniciada
+2026-11-11 16:43:45 | INFO    | Cliente              | Cliente registrado: Cliente Mario [1236655] - mariofernando@gmail.com - ACTIVO
