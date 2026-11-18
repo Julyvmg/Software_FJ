@@ -202,3 +202,12 @@
 2026-11-11 16:41:17 | INFO    | Simulacion           | ===== FIN DE LA SIMULACIÓN: 21 operaciones =====
 2026-11-11 16:42:46 | INFO    | Interfaz             | Interfaz gráfica iniciada
 2026-11-11 16:43:45 | INFO    | Cliente              | Cliente registrado: Cliente Mario [1236655] - mariofernando@gmail.com - ACTIVO
+2026-11-17 21:21:05 | INFO    | Interfaz             | Interfaz gráfica iniciada
+2026-11-17 21:47:58 | INFO    | Interfaz             | Interfaz gráfica iniciada
+2026-11-17 21:48:55 | INFO    | Cliente              | Cliente registrado: Cliente kathe muñoz [1233321566] - kath.graff038@gmail.com - ACTIVO
+2026-11-17 21:49:09 | INFO    | Cliente              | Cliente 1233321566: estado ACTIVO -> INACTIVO
+2026-11-17 21:49:10 | INFO    | Cliente              | Cliente 1233321566: estado INACTIVO -> ACTIVO
+2026-11-17 21:49:11 | INFO    | Cliente              | Cliente 1233321566: estado ACTIVO -> INACTIVO
+2026-11-17 21:49:12 | INFO    | Cliente              | Cliente 1233321566: estado INACTIVO -> ACTIVO
+2026-11-17 21:49:12 | INFO    | Cliente              | Cliente 1233321566: estado ACTIVO -> INACTIVO
+2026-11-17 21:49:13 | INFO    | Cliente              | Cliente 1233321566: estado INACTIVO -> ACTIVO
