@@ -81,10 +81,13 @@ def verificar_pruebas():
     cargador = unittest.TestLoader()
     suite = unittest.TestSuite(cargador.loadTestsFromName(nombre) for nombre in SUITES_DE_PRUEBA)
     salida = io.StringIO()
-    resultado = unittest.TextTestRunner(stream=salida, verbosity=0).run(suite)
-    problemas = [str(prueba) for prueba, _ in resultado.failures + resultado.errors]
-    detalle = (f"{resultado.testsRun} pruebas, {len(resultado.failures)} fallos, "
-               f"{len(resultado.errors)} errores")
+
+    with log_temporal():
+        resultado = unittest.TextTestRunner(stream=salida, verbosity=0).run(suite)
+
+        problemas = [str(prueba) for prueba, _ in resultado.failures + resultado.errors]
+        detalle = (f"{resultado.testsRun} pruebas, {len(resultado.failures)} fallos, "
+                   f"{len(resultado.errors)} errores") 
     return resultado.wasSuccessful(), detalle, problemas
 
 

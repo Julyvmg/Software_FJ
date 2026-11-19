@@ -520,22 +520,27 @@ class AplicacionFJ(tk.Tk):
             text="Listo.", fg=COLORES["suave"]))
 
     def _ejecutar(self, accion, exito=None):
-        """Ejecuta una acción mostrando cualquier error en pantalla (sin cerrar el programa)."""
+        """Ejecuta una acción, registra los errores y muestra el resultado."""
         try:
             resultado = accion()
+
         except ErrorSistema as error:
-            self.avisar("No se pudo completar la operación. Revise el dato indicado.", "error")
-            messagebox.showerror("Dato no válido", str(error), parent=self)
+            self.log.error("Error de sistema en la interfaz", error, origen="Interfaz")
+            self.avisar("Ocurrió un error en el sistema. Revise el registro.", "error")
+            messagebox.showerror("Error de sistema",
+                                 str(error), 
+                                 parent=self)
             return None
-        except Exception as error:  # Error inesperado: se registra y se informa.
+        except Exception as error:
             self.log.error("Error inesperado en la interfaz", error, origen="Interfaz")
-            self.avisar("Ocurrió un error inesperado. Quedó guardado en el registro.", "error")
-            messagebox.showerror("Error inesperado", f"{type(error).__name__}: {error}", parent=self)
+            self.avisar("Ocurrió un error inesperado. Revise el registro.", "error")  
+            messagebox.showerror("Error inesperado",
+                             str(error), 
+                             parent=self)  
             return None
         if exito:
-            self.avisar(exito)
-        return resultado if resultado is not None else True
-
+            self.avisar(exito, "ok")    
+        return resultado if resultado is not None else True 
     def _pagina(self, clave, titulo, descripcion):
         """Crea una página con título y devuelve el marco donde va su contenido."""
         pagina = ttk.Frame(self.contenedor, style="Fondo.TFrame", padding=(24, 20, 24, 16))
